@@ -26,6 +26,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - package-xml-
 
+      - run: apt-get install -y sudo
+
       - run:
           name: Install Dependencies
           command: |
