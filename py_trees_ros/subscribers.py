@@ -34,8 +34,6 @@ import py_trees
 import rclpy.qos
 import std_msgs.msg as std_msgs
 
-from . import utilities
-
 ##############################################################################
 # Behaviours
 ##############################################################################
@@ -377,7 +375,11 @@ class ToBlackboard(Handler):
             clearing_policy=clearing_policy
         )
         self.logger = py_trees.logging.Logger("%s" % self.name)
-        self.blackboard = py_trees.blackboard.Blackboard()
+        self.blackboard = py_trees.blackboard.Blackboard(
+            name=self.name,
+            unique_identifier=self.id,
+            write=blackboard_variables.keys()
+        )
         if isinstance(blackboard_variables, str):
             self.blackboard_variable_mapping = {blackboard_variables: None}
             if not isinstance(initialise_variables, dict):
