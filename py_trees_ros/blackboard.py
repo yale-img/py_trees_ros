@@ -32,7 +32,10 @@ import rospy
 import py_trees.console as console
 import std_msgs.msg as std_msgs
 
-from cPickle import dumps
+try:
+   import cPickle as pickle
+except:
+   import pickle
 
 ##############################################################################
 # ROS Blackboard
