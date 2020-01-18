@@ -350,7 +350,7 @@ class ToBlackboard(Handler):
         )
         self.logger = py_trees.logging.Logger("%s" % self.name)
         self.blackboard = py_trees.blackboard.Blackboard()
-        if isinstance(blackboard_variables, basestring):
+        if isinstance(blackboard_variables, str):
             self.blackboard_variable_mapping = {blackboard_variables: None}
             if not isinstance(initialise_variables, dict):
                 self.blackboard_initial_variable_mapping = {blackboard_variables: initialise_variables}
