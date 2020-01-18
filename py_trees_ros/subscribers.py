@@ -441,7 +441,7 @@ class EventToBlackboard(Handler):
             clearing_policy=py_trees.common.ClearingPolicy.ON_SUCCESS
         )
         self.variable_name = variable_name
-        self.blackboard = py_trees.Blackboard()
+        self.blackboard = py_trees.blackboard.Blackboard()
 
     def update(self):
         """
