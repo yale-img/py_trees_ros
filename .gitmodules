@@ -1,3 +1,3 @@
 [submodule "py_trees_ros/py_trees"]
 	path = py_trees_ros/py_trees
-	url = git@github.com:nathantsoi/py_trees.git
+	url = https://github.com/yale-img/py_trees.git
