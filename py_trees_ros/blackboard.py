@@ -74,7 +74,7 @@ class _View(object):
 
     def _is_changed(self):
         self._update_sub_blackboard()
-        current_pickle = dumps(self.dict, -1)
+        current_pickle = pickle.dumps(self.dict, -1)
         blackboard_changed = current_pickle != self.cached_dict
         self.cached_dict = current_pickle
 
@@ -223,7 +223,7 @@ class Exchange(object):
         return False
 
     def _is_changed(self):
-        current_pickle = dumps(self.blackboard.__dict__, -1)
+        current_pickle = pickle.dumps(self.blackboard.__dict__, -1)
         blackboard_changed = current_pickle != self.cached_blackboard_dict
         self.cached_blackboard_dict = current_pickle
         return blackboard_changed
